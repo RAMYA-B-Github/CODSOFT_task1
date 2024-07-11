@@ -1,0 +1,28 @@
+//TASK 1
+//NUMBER GUESSING GAME
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+// Main function
+int main() 
+{
+    srand(time(0));   //creating random number generator
+    int number = rand() % 100 + 1;   // Random number between 1 and 100
+    int guess;
+
+    do {
+    	cout << "Guess the number (1 to 100): ";
+        cin >> guess;  //taking input of guessing number 
+        if (guess < number)
+            cout << "Too low. Try again."<<endl ;
+        else if (guess > number)
+            cout << "Too high. Try again."<<endl;
+    } while (guess != number);
+
+    cout << "Correct! The number was " << number << "." << endl;
+
+    return 0;
+}
